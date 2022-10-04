@@ -2,9 +2,9 @@
 import './App.css';
 import { Header } from './components/HeaderWeb/Header';
 import { ItemListContainer } from './components/ItemListContainer.js/ItemListContainer';
-import CartWidget from './components/NavBar/BarraNav/CartWidget';
 import { NavBar } from './components/NavBar/BarraNav/NavBar';
-
+import {CartWidget} from './components/NavBar/ItemWidget/CartWidget';
+ 
 
 function App() {
 

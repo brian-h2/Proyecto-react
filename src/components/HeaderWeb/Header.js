@@ -1,5 +1,5 @@
+import './Header.css'
 import React from 'react'
-import auto from './imagen/header.jpg'
 
 export const Header = () => {
     return (

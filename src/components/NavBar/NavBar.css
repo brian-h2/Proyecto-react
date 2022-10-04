@@ -1,0 +1,17 @@
+.icon-cart{ 
+    margin-right: 5px;
+    width: 40px;
+    transition: all 10s ease-in-out;
+
+}
+
+.icon-cart:hover{
+    border: 1px solid;
+    border-color: rgb(85, 81, 81);
+}
+
+.cart-contador{
+    margin-top: 80px;
+    margin-right: 20px;
+    font-size: 15px;
+}
