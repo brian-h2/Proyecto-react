@@ -2,7 +2,6 @@ body{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background: #EDEAEB;
 }
 
 .icono-carrito{ 
@@ -17,8 +16,13 @@ body{
     text-align: center;
 }
 
-.contenedor{
-    background-image: url(assets/header.jpg);
+
+/*Header*/
+
+.header{
+    width: 2400px;
+    height: 600px;
+    background: url(./components/HeaderWeb/imagen/header.jpg);
     background-size: 100%;
-    
+    background-repeat: no-repeat;
 }

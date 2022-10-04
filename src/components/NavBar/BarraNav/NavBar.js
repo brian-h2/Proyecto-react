@@ -1,4 +1,5 @@
 import React from 'react'
+import CartWidget  from './CartWidget'
 
 export const NavBar = () => {
   return (
@@ -26,9 +27,7 @@ export const NavBar = () => {
           </ul>
         </li>
         <li class="nav-item">
-          
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO9JREFUSEvNlN0VATEQhb/thE7ohFeKQBG8ohI6oRPOdTJ71m42GbvimNck95s7P6koHFVhfX4KeAQ3d+AMbL/hrunAAKY7B65jIbESLYBjEBdkVMQAE+AWVEe76GuyHMjJ0FAfp3rcB2i6GALJAiR6AWbAEjg5KeZ8Z1OY2gNrdp2NA2KTqPLoXXLRPm22JSS3cv2K3CZr2TahRPWjHifRkuYA5sJTJivPm2YO0Gx23biIg16nHoAmSfY90VlMD0DClmEKon+r87V4AZ7so3e8gD2wAg7AuqWUOsuOqWk1v/J2UqkzN6C4g+I9+F/AE7jxMhlT41/bAAAAAElFTkSuQmCC" href="#" alt="carrito" class="icono-carrito"/>
-         
+          {CartWidget}
         </li>
       </ul>
       <form class="d-flex" role="search">
