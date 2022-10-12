@@ -1,21 +1,40 @@
 
+import {BrowserRouter, Routes, Route, Navigate, Link} from 'react-router-dom'
+
+
 import './App.css';
-import { Header } from './components/HeaderWeb/Header';
-import { ItemListContainer } from './components/ItemListContainer.js/ItemListContainer';
-import { NavBar } from './components/NavBar/BarraNav/NavBar';
-import {CartWidget} from './components/NavBar/ItemWidget/CartWidget';
- 
+
+import { Header } from './Pages/HeaderWeb/Header';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { NavBar } from './Pages/NavBar/BarraNav/NavBar';
+import { Carrito } from './Pages/Carrito/Carrito';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { ContextApp } from './context/ContextApp';
+import { useState } from 'react';
+
+
 
 function App() {
 
   return (
-    <div className="App">
-      <NavBar/>
-      <Header/>
-      <ItemListContainer greeting="Bienvenido"/>
-    </div>
-  );
+      <ContextApp.Provider value={[]}>
+        <BrowserRouter>
+          <NavBar/>
+          <Header/>
+          <Routes>
+              <Route path='/' element={<ItemListContainer greeting="Bienvenido"/>}></Route>
+              <Route path='/categoria/:idCategoria' element={<ItemListContainer/>}></Route>
+              <Route path='/detalle/:idProducto' element={<ItemDetailContainer/>}></Route>
+              <Route path='/carrito' element={<Carrito/>}></Route>  
+          </Routes>
   
+        </BrowserRouter>
+      </ContextApp.Provider>
+      
+    );  
 }
+
+  
+
 
 export default App;

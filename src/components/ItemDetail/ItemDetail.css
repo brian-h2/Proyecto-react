@@ -1,0 +1,10 @@
+
+.item-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-detail{
+    width: 900px;
+    
+}

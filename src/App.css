@@ -4,6 +4,9 @@ body{
     box-sizing: border-box;
 }
 
+/*Variables*/
+
+
 
 /*Lista de productos*/
 
@@ -13,12 +16,4 @@ body{
 }
 
 
-/*Header*/
 
-.header{
-    width: 2400px;
-    height: 600px;
-    background: url(../public/assets/header.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
