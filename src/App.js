@@ -9,27 +9,26 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { NavBar } from './Pages/NavBar/BarraNav/NavBar';
 import { Carrito } from './Pages/Carrito/Carrito';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import { ContextApp } from './context/ContextApp';
-import { useState } from 'react';
-
+import { ItemListCategory } from './components/ItemListCategory/ItemListCategory';
+import CartContextProvider from './context/ContextApp';
 
 
 function App() {
 
   return (
-      <ContextApp.Provider value={[]}>
+      <CartContextProvider>
         <BrowserRouter>
           <NavBar/>
           <Header/>
           <Routes>
               <Route path='/' element={<ItemListContainer greeting="Bienvenido"/>}></Route>
-              <Route path='/categoria/:idCategoria' element={<ItemListContainer/>}></Route>
+              <Route path='/categoria/:idCategoria' element={<ItemListCategory/>}></Route>
               <Route path='/detalle/:idProducto' element={<ItemDetailContainer/>}></Route>
               <Route path='/carrito' element={<Carrito/>}></Route>  
           </Routes>
   
         </BrowserRouter>
-      </ContextApp.Provider>
+        </CartContextProvider>
       
     );  
 }

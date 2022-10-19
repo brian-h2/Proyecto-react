@@ -16,7 +16,10 @@ export const NavBar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent"/>
     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link"><Link className="link" to="/categoria/Interior">Interiores</Link></a>
+          <a className="nav-link"><Link className="link" to={`/categoria/interior`}>Interiores</Link></a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link"><Link className="link" to="/categoria/exterior">Exteriores</Link></a>
         </li>
     </ul>
       <form className="d-flex" role="search">

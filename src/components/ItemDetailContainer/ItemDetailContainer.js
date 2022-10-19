@@ -1,32 +1,27 @@
 import React from 'react'
 import { useEffect, useState} from "react"
-import { useParams,Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import { gfetch } from '../../helpers/gfetch'
+import { Loading } from '../Loading'
+
 export const ItemDetailContainer = () => {
-  
-  const {idProducto} = useParams()
+   
   const [producto, setProductos] = useState({})
   const [loading, setLoading ] = useState(true)
-
+  const {idProducto} = useParams()
+  
   useEffect(()=>{
-    gfetch()  
-      .then(res => setProductos(res.find(producto => producto.id===idProducto)))
+    gfetch(idProducto)  
+      .then(res => setProductos(res.find(producto => producto.id === idProducto)))
       .catch(err => console.log(err))
       .finally(()=> setLoading(false))
     }, [])  
   
     return (
-    <>
-    {loading
-      ?
-      <h3>Cargando....</h3>
-      :
-      
-      ItemDetail(producto)
+    
+    loading ? <Loading/> : <ItemDetail producto={producto}/>
 
-    }
-    </>
     )
   
 }
