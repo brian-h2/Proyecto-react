@@ -1,0 +1,88 @@
+.form-order{
+    width: 500px;
+    border: solid 2px red;
+}
+
+.form-control{
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(0, 0, 0, 0.422);
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+}
+
+.container{
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    width: 800px;
+    height: 290px;
+    background-color: beige;
+    display: flex;
+}
+
+.container-form{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.lista-productos{
+    font-size: 30px;
+}
+
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 55px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    
+    width: 200px;
+}
+
+.price{
+    margin-top: 20px;
+}
+
+button {
+    /* Variables */
+   --button_radius: 0.75em;
+   --button_color: #ffffff;
+   --button_outline_color: #926e3f;
+   font-size: 15px;
+   border: none;
+   border-radius: var(--button_radius);
+   background: var(--button_outline_color);
+  }
+  
+  .button_top {
+   display: block;
+   box-sizing: border-box;
+   border: 2px solid var(--button_outline_color);
+   border-radius: var(--button_radius);
+   padding: 0.45em 1.2em;
+   background: var(--button_color);
+   color: var(--button_outline_color);
+   transform: translateY(-0.2em);
+   transition: transform 0.1s ease;
+  }
+  
+  button:hover .button_top {
+    /* Pull the button upwards when hovered */
+   transform: translateY(-0.33em);
+  }
+  
+  button:active .button_top {
+    /* Push the button downwards when pressed */
+   transform: translateY(0);
+  }
+

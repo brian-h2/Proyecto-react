@@ -2,58 +2,50 @@ import { useState} from "react"
 import { Link } from 'react-router-dom'
 import { useContextApp } from "../../context/ContextApp"
 import { ItemCount } from '../ItemCount/ItemCount'
+import '../../Pages/Carrito/carrito.css'
 
 import './ItemDetail.css'
 
-export const ItemDetail = ({producto}) => {
+export const ItemDetail = ({product}) => {
 
-  const [contador, setIsCount] = useState(true)
+  const [counter, setIsCount] = useState(true)
   const { addItem  } = useContextApp()
 
-  
-  
-  const onAdd = (cantidad) => {
-    console.log('onAdd', cantidad)
-    addItem( { ...producto, cantidad } )
+  const onAdd = (amount) => {
+    addItem( { ...product, amount } )
     setIsCount(false)
   }
 
   return (
     <>
+
     <div className='item-detail'>
       <div className='card-image'>
 
-        <img className='card-image-plant' src={producto.image}></img>
+        <img className='card-image-plant' src={product.image}></img>
 
       </div>
       <div className='card-detail'>
         
-        <h3 className='card-detail-name'>{producto.name}</h3>
+        <h3 className='card-detail-name'>{product.name}</h3>
         
-        <h4 className='card-detail-price'>$ {producto.price}</h4>
+        <h4 className='card-detail-price'>$ {product.price}</h4>
 
-        <h2 className='card-detail-description'>{producto.description}</h2>
+        <h2 className='card-detail-description'>{product.description}</h2>
         
-        
-        <button className='boton-compra' onClick={()=> onAdd()}>
-            <span class="transition"></span>
-            <span class="gradient"></span>
-            <span class="label">Agregar al carrito</span>
-        </button>
         
       </div>
       
       <div className='botones-interaccion'>
         {
-          contador ? 
-          <ItemCount onAdd={onAdd} stock={producto.stock} init={1}/>
+          counter ? <ItemCount onAdd={onAdd} stock={product.stock} init={0}/>
           :
           <div>
               <Link to="/cart">
-                <button>Terminar Compra</button>
+                <button class="button-interaction-buy"><span class="button_top">Terminar Compra</span></button>
               </Link>
               <Link to="/">
-                <button>Seguir Comprando</button>
+                <button class="button-interaction-buy"><span class="button_top">Seguir Comprando</span></button>
               </Link>
 
           </div>
@@ -66,4 +58,3 @@ export const ItemDetail = ({producto}) => {
   
   )
 }
-//<Link className='text-buy'to={`/carrito`}></Link>

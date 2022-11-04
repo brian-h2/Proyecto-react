@@ -2,8 +2,20 @@ import './NavBar.css'
 import React from 'react'
 import { CartWidget }  from '../ItemWidget/CartWidget'
 import { Link } from 'react-router-dom'
+import { useContextApp } from '../../../context/ContextApp'
+
+// Variable para mapear dentro del navBar
+
+let menu = [
+  {id:1, idCategory:'Interior', nombre:'Interiores'},
+  {id:2, idCategory:'Exterior', nombre:'Exteriores'}
+]
+
 
 export const NavBar = () => {
+
+  const {productsAmount} = useContextApp()
+
   return (
     <>
      <nav className="navbar navbar-expand-lg bg-light">
@@ -16,20 +28,16 @@ export const NavBar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent"/>
     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link"><Link className="link" to={`/categoria/interior`}>Interiores</Link></a>
+          <a className="nav-link"><Link className="link" to={`/categoria/Interior`}>Interiores</Link></a>
         </li>
         <li className="nav-item">
-          <a className="nav-link"><Link className="link" to="/categoria/exterior">Exteriores</Link></a>
+          <a className="nav-link"><Link className="link" to="/categoria/Exterior">Exteriores</Link></a>
         </li>
     </ul>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
-      <li className="nav-item">
-        
-      <Link className="link" to="/carrito"><CartWidget/></Link><span className="cart-contador">12</span>
-        </li>
+
+    <li className="nav-item">
+        <Link className="link" to="/cart"><CartWidget/></Link><span className="cart-counter">{productsAmount()}</span>
+    </li>
     </div>
     </nav>
     </>

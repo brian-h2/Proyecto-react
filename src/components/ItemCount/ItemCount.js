@@ -21,13 +21,13 @@ export const ItemCount = ({stock, init, onAdd}) => {
 
   return (
     <div>
-            <button onClick={itemAdd}>+</button>
-            <br />
-            <p>{count}</p>
-            <br />
-            <button onClick={itemRemove}>-</button>
-            <br />
-            <button onClick={itemOnAdd}>Agregar al carrito</button>
+            <button class="button-interaction-add-remove"onClick={itemAdd}>+</button>
+            
+            <span>{count}</span>
+           
+            <button class="button-interaction-add-remove" onClick={itemRemove}>-</button>
+            
+            <button class="button-interaction-add-remove" onClick={itemOnAdd}>Agregar al carrito</button>
         </div>
 
   )
