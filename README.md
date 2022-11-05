@@ -9,5 +9,5 @@ https://proyecto-react-six.vercel.app/
 -Manejo de estados en el carrito
 -Eventos asincronicos
 
-
+### Desarrollada con create react app
 
