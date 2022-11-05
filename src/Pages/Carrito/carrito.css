@@ -27,6 +27,20 @@
     align-items: center;
 }
 
+.datos-order{
+    background-color: #dfbb8c;
+    box-shadow:0px 8px 10px rgba(0,0,0,0.2);
+}
+
+.datos{
+    list-style-type: none;
+    font-size: 25px;
+}
+
+.datos-titulo{
+    font-size: 30px;
+}
+
 .lista-productos{
     font-size: 30px;
 }

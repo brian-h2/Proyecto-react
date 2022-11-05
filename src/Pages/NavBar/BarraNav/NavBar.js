@@ -4,13 +4,6 @@ import { CartWidget }  from '../ItemWidget/CartWidget'
 import { Link } from 'react-router-dom'
 import { useContextApp } from '../../../context/ContextApp'
 
-// Variable para mapear dentro del navBar
-
-let menu = [
-  {id:1, idCategory:'Interior', nombre:'Interiores'},
-  {id:2, idCategory:'Exterior', nombre:'Exteriores'}
-]
-
 
 export const NavBar = () => {
 

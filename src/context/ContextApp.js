@@ -9,6 +9,7 @@ const CartContextProvider = ({children}) => {
 
     const [cartlist, setCartList] = useState([])
 
+
     //Seteamos el cartList con producto
     
     const addItem = (producto) => {
@@ -22,11 +23,11 @@ const CartContextProvider = ({children}) => {
 
         if ( filter === -1) {
             setCartList([ ...cartlist ,producto])
+            localStorage.setItem('carList', JSON.stringify(cartlist))
         } else{
             cartlist[filter].amount += producto.amount 
             setCartList ( [...cartlist])     
         }
-
     }
 
 
@@ -48,7 +49,6 @@ const CartContextProvider = ({children}) => {
 
     //Con lenght obtenemos el tamañp del carlist en el que se produce filter para eliminar tal producto
 
-    console.log(cartlist)
 
     const deleteProduct = (id) => { cartlist.length === [''] ? setCartList(cartlist.filter((item) => item.id !== id)) : setCartList(cartlist.filter((item) => item.id !== id))}
 

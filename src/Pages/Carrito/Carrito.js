@@ -7,8 +7,6 @@ export const Cart = () => {
 
   const [idOrder, setIdOrder] = useState('')
 
-  console.log(idOrder)
-
   // Seteamos un estado para manipular los valores de los input
 
   const [dataForm, setDataForm] = useState({
@@ -60,8 +58,6 @@ export const Cart = () => {
 
   }
 
-
-
   // Funcion para setear un nuevo estado de los valores que se obtienen
 
   const handleChange = (e) => {
@@ -72,12 +68,27 @@ export const Cart = () => {
 
   }
 
-
   return (
     <div className='cart'>     
        <h2 className='title'>Carrito</h2>
-      {idOrder && <h3>Orden generada con exito: {idOrder}</h3>}
+  
       <div className='container-cart'>
+      { idOrder && <div className='datos-order'><h3 className='datos-titulo'>Orden generada con exito: {idOrder}</h3>
+      <ul className='datos'>
+        <li>
+          <a>Nombre: {dataForm.name}</a>
+        </li>
+        <li>
+          <a>Email: {dataForm.email}</a> 
+        </li>
+        <li>
+          <a>Numero de telefono: {dataForm.phone}</a> 
+        </li>
+  
+      </ul>
+      
+      
+      </div>}
       {  
         cartlist <= 0 ?
           <div>
@@ -89,7 +100,7 @@ export const Cart = () => {
             <ul>
               {cartlist.map(product => 
                 <li className='lista-productos'> 
-                    Nombre: {product.name}, Categoría: {product.categoria}, Precio: {product.price}, Cantidad: {product.amount} 
+                    Nombre: {product.name}, Categoría: {product.categoria}, Precio: {product.price}, Cantidad: {product.amount}. 
                     <button onClick={() => deleteProduct(product.id)}><span class="button_top">Eliminar producto</span></button>
                 </li> )}
             </ul>
@@ -99,23 +110,22 @@ export const Cart = () => {
               <form class="row g-3" id="formulario" onSubmit={generateOrder}>
                 
                 <div class="col-md-6">
-                      Ingresa tu nombre: <input  class="form-control" type="text" name="name" value={dataForm.name} onChange={handleChange}/>
+                      Ingresa tu nombre: <input  class="form-control" type="text" name="name" required value={dataForm.name} onChange={handleChange}/>
                 </div>   
                     
                 <div class="col-md-6">
-                    Email:  <input class="form-control" type="email" name="email" value={dataForm.email} onChange={handleChange}/>
+                    Email:  <input class="form-control" type="email" name="email" required value={dataForm.email} onChange={handleChange}/>
                 </div>  
                     
                 <div class="col-md-6">    
-                      Apellido:  <input class="form-control" type="surname" name="surname" value={dataForm.surname} onChange={handleChange}/>   
+                      Apellido:  <input class="form-control" type="surname" name="surname" required value={dataForm.surname} onChange={handleChange}/>   
                 </div>  
                 <div class="col-md-6">  
-                      Numero de telefono:  <input class="form-control" type="phone"name="phone"value={dataForm.phone} onChange={handleChange}/>
+                      Numero de telefono:  <input class="form-control" type="phone"name="phone" required value={dataForm.phone} onChange={handleChange}/>
                 </div>
                 <div class="col-12"> 
                   <div className='buttons'>
-                      <button type="submit"><span class="button_top">Generar Orden</span></button>
-                      
+                      <button type="submit" ><span class="button_top">Generar Orden</span></button>
                       
                       <button onClick={clearCart}><span class="button_top">Vaciar carrito</span></button>
                   </div>
@@ -124,7 +134,6 @@ export const Cart = () => {
 
               </form>
             </div>
-    
           </>
         }
       </div>
